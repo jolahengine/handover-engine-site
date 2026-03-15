@@ -353,7 +353,7 @@ img{display:block;max-width:100%}
     </div>
   </div>
   <div class="h-right">
-    <div class="status-tag"><div class="tag-dot"></div><div class="tag-txt">Per departure &middot; industry average</div></div>
+    <div class="status-tag"><div class="tag-dot"></div><div class="tag-txt">Per departure &middot; SHRM industry average</div></div>
     <div class="cost-label">Every time someone leaves, you lose</div>
     <div class="cost-num"><span>$</span>15,000</div>
     <div class="cost-label-bot">In knowledge, productivity &amp; rehiring</div>
@@ -367,6 +367,10 @@ img{display:block;max-width:100%}
       <span class="proof-item">5 signed contracts</span>
       <span class="proof-item">&middot;</span>
       <span class="proof-item">Mowtown &middot; 500 staff</span>
+      <span class="proof-item">&middot;</span>
+      <span class="proof-item">Coldbore &middot; Construction</span>
+      <span class="proof-item">&middot;</span>
+      <span class="proof-item">Tsar Sealants</span>
       <span class="proof-item">&middot;</span>
       <span class="proof-item">14-day free trial</span>
     </div>
@@ -386,7 +390,7 @@ img{display:block;max-width:100%}
   <div class="section-hdr">
     <div class="section-eyebrow">How it works</div>
     <h2 class="section-h2">Twenty minutes. One guided flow.<br><em>Nothing gets lost.</em></h2>
-    <p class="section-desc">From the moment a departure is triggered, the handover document exists. It fills in over time. It is never empty. Only incomplete.</p>
+    <p class="section-desc">From the moment a departure is triggered, the handover document exists. It fills in over time. It is never empty. Only incomplete. Your manager dashboard shows every active transition — in progress, at risk, or complete — so nothing is ever invisible.</p>
   </div>
   <div class="steps">
     <div class="step">
@@ -470,19 +474,19 @@ img{display:block;max-width:100%}
   <div class="calc-inner">
     <div class="calc-inputs">
       <div class="input-group">
-        <div class="input-hdr"><div class="input-label">Employees</div><div class="input-val" id="lbl-emp">50</div></div>
-        <input class="slider" id="sl-emp" type="range" min="10" max="250" value="50" step="5" oninput="heSetEmp(this.value)">
+        <div class="input-hdr"><div class="input-label">Employees</div><div class="input-val" id="lbl-emp">20</div></div>
+        <input class="slider" id="sl-emp" type="range" min="10" max="250" value="20" step="5" oninput="heSetEmp(this.value)">
         <div class="slider-ends"><span>10</span><span>250</span></div>
       </div>
       <div class="input-group">
-        <div class="input-hdr"><div class="input-label">Annual Departure Rate</div><div class="input-val" id="lbl-dep">20%</div></div>
-        <input class="slider" id="sl-dep" type="range" min="5" max="60" value="20" step="5" oninput="heSetDep(this.value)">
+        <div class="input-hdr"><div class="input-label">Annual Departure Rate</div><div class="input-val" id="lbl-dep">10%</div></div>
+        <input class="slider" id="sl-dep" type="range" min="5" max="60" value="10" step="5" oninput="heSetDep(this.value)">
         <div class="slider-ends"><span>5%</span><span>60%</span></div>
         <div class="input-hint">Resignations, terminations, retirements</div>
       </div>
       <div class="input-group">
-        <div class="input-hdr"><div class="input-label">Internal Move Rate</div><div class="input-val" id="lbl-mov">15%</div></div>
-        <input class="slider" id="sl-mov" type="range" min="5" max="40" value="15" step="5" oninput="heSetMov(this.value)">
+        <div class="input-hdr"><div class="input-label">Internal Move Rate</div><div class="input-val" id="lbl-mov">10%</div></div>
+        <input class="slider" id="sl-mov" type="range" min="5" max="40" value="10" step="5" oninput="heSetMov(this.value)">
         <div class="slider-ends"><span>5%</span><span>40%</span></div>
         <div class="input-hint">Promotions, lateral moves, parental leave</div>
       </div>
@@ -714,7 +718,7 @@ img{display:block;max-width:100%}
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">How does the Lockdown feature work?<span class="faq-icon">+</span></div>
-      <div class="faq-a">Lockdown triggers automatically when a handover is marked Complete. It flags every active system access the departing employee held: licences, logins, tools, accounts. Your IT or operations team can close them immediately. 1 in 3 departed employees retain active access post-departure. Lockdown closes that door at the same moment the handover is finished.</div>
+      <div class="faq-a">Lockdown triggers automatically when a handover is marked Complete. It generates a structured access audit — a checklist of every system, licence, login, and account the departing employee held, pulled from the information captured during the handover. Your IT or operations team receives this list immediately and can close each item systematically. 1 in 3 departed employees retain active access post-departure. Lockdown closes that door at the same moment the handover is finished. On the Business plan, Lockdown connects directly to your HRIS or identity provider for automated revocation.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">What happens at the end of the free trial?<span class="faq-icon">+</span></div>
@@ -791,7 +795,7 @@ var logoData = [{"src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAgAAAQABAAD/7QCc
 })();
 
 // ── CALCULATOR ──
-var heEmp=50,heDep=20,heMov=15,heRep=10000,heProd=6,heRet=80,heRev=0,heTemp=0;
+var heEmp=20,heDep=10,heMov=10,heRep=10000,heProd=6,heRet=80,heRev=0,heTemp=0;
 function heSetEmp(v){heEmp=parseInt(v);document.getElementById('lbl-emp').textContent=heEmp;heCalc()}
 function heSetDep(v){heDep=parseInt(v);document.getElementById('lbl-dep').textContent=heDep+'%';heCalc()}
 function heSetMov(v){heMov=parseInt(v);document.getElementById('lbl-mov').textContent=heMov+'%';heCalc()}
